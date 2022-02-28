@@ -21,7 +21,7 @@ namespace ChipsFastFood.Controllers
             
 
 
-            if (burger > 4 || drink > 4 || side > 4 || dessert > 4)
+            if (burger > 4 || burger == 0 ||  drink > 4 || drink == 0 || side > 4 || side == 0 || dessert > 4 || dessert == 0 )
             {
                 return "invalid input.";
 
