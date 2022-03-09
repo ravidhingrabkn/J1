@@ -18,19 +18,27 @@ namespace ChipsFastFood.Controllers
             int[] sCalories = { 100, 57, 70, 0 };
             int[] desCalories = { 167, 266, 75, 0 };
             int tCalories;
-            
 
 
-            if (burger > 4 || burger < 1 ||  drink > 4 || drink < 1 || side > 4 || side < 1 || dessert > 4 || dessert < 1 )
+            if (burger > 4 || drink > 4 || side > 4 || dessert > 4)
+            {
+                return "invalid input.";
+            }
+            else if (burger < 1 || drink < 1 || side < 1 || dessert < 1)
             {
                 return "invalid input.";
 
             }
-            tCalories = bCalories[burger-1] + dCalories[drink-1] + sCalories[side-1] + desCalories[dessert-1];
+            else
+            {
+                tCalories = bCalories[burger - 1] + dCalories[drink - 1] + sCalories[side - 1] + desCalories[dessert - 1];
+                return "Your total calorie count is " + tCalories.ToString();
+
+            }
+                
             
-             string cCount = "Your total calorie count is " + tCalories.ToString();
             
-            return cCount;
+            
 
         }
     }
